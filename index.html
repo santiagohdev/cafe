@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bruma — Café de especialidad en Buenos Aires</title>
+<meta name="description" content="Café de especialidad, panadería de masa madre y cocina de estación en Villa Crespo. Tostamos nuestro propio grano cada semana.">
+<meta name="theme-color" content="#F7F3EC">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bruma — Café de especialidad">
+<meta property="og:description" content="Tostamos nuestro propio grano cada semana. Villa Crespo, Buenos Aires.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="saltar" href="#menu">Saltar al menú</a>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav" id="nav">
+  <a href="#inicio" class="nav__logo">Bruma<span>.</span></a>
+
+  <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+
+  <nav class="nav__links" id="links">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#menu">Menú</a>
+    <a href="#cafe">Nuestro café</a>
+    <a href="#galeria">Galería</a>
+    <a href="#visitanos">Visitanos</a>
+    <a href="#reservar" class="btn btn--sm">Reservar mesa</a>
+  </nav>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="inicio">
+  <div class="hero__img">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=80"
+         alt="Taza de café recién servida sobre una mesa de madera">
+  </div>
+
+  <div class="hero__inner">
+    <span class="eyebrow eyebrow--claro">Villa Crespo · Buenos Aires</span>
+    <h1>El café que<br><em>tarda</em> lo que<br>tiene que tardar.</h1>
+    <p>Tostamos nuestro propio grano cada semana, hacemos el pan con masa madre
+       de diez años y cocinamos con lo que hay de estación. Nada sale rápido.
+       Todo sale bien.</p>
+    <div class="hero__cta">
+      <a href="#menu" class="btn">Ver el menú</a>
+      <a href="#reservar" class="btn btn--fantasma btn--claro">Reservar una mesa</a>
+    </div>
+  </div>
+
+  <div class="hero__abajo">
+    <span class="mono">Abierto hoy · 08:00 – 20:00</span>
+    <span class="scroll-hint" aria-hidden="true">Deslizá</span>
+  </div>
+</section>
+
+<!-- ══════════ CIFRAS ══════════ -->
+<section class="tira">
+  <div class="tira__item"><b>2014</b><span>Desde</span></div>
+  <div class="tira__item"><b>7</b><span>Orígenes en carta</span></div>
+  <div class="tira__item"><b>10 años</b><span>De masa madre</span></div>
+  <div class="tira__item"><b>100%</b><span>Tostado propio</span></div>
+</section>
+
+<!-- ══════════ NOSOTROS ══════════ -->
+<section class="seccion" id="nosotros">
+  <div class="dos-col">
+    <div class="dos-col__texto reveal">
+      <span class="eyebrow">Nosotros</span>
+      <h2 class="display">Empezamos con<br>una tostadora usada<br>y mucha terquedad.</h2>
+      <p>En 2014 alquilamos un local de cuarenta metros sobre Vera y compramos una
+         tostadora de segunda mano que funcionaba a veces. Los primeros meses
+         quemamos más grano del que vendimos.</p>
+      <p>Once años después seguimos en la misma esquina, con la misma obsesión y
+         una tostadora que ahora sí anda. Cada lunes tostamos lo que se va a servir
+         esa semana: nunca guardamos grano más de siete días.</p>
+      <p>No tenemos wifi. Tenemos mesas grandes, sobremesa larga y gente que se
+         conoce entre sí.</p>
+      <div class="firma">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=80" alt="">
+        <div>
+          <b>Delfina y Tomás</b>
+          <span>Fundadores</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dos-col__fotos reveal">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80"
+           alt="Interior del salón con mesas de madera y luz natural" class="foto-alta">
+      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=80"
+           alt="Detalle de la barra con la máquina de espresso" class="foto-baja">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MENÚ ══════════ -->
+<section class="seccion seccion--oscura" id="menu">
+  <div class="seccion__cab reveal">
+    <span class="eyebrow eyebrow--claro">La carta</span>
+    <h2 class="display">Menú</h2>
+    <p class="seccion__sub">Cambia con la estación. Lo que ves acá es lo que hay hoy.</p>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="Categorías del menú">
+    <button role="tab" aria-selected="true"  data-tab="cafe">Café</button>
+    <button role="tab" aria-selected="false" data-tab="desayunos">Desayunos</button>
+    <button role="tab" aria-selected="false" data-tab="cocina">Cocina</button>
+    <button role="tab" aria-selected="false" data-tab="pasteleria">Pastelería</button>
+    <button role="tab" aria-selected="false" data-tab="otras">Otras bebidas</button>
+  </div>
+
+  <div class="menu" id="menu-contenido"></div>
+
+  <p class="menu__nota mono">
+    Tenemos opciones sin TACC y veganas en toda la carta · Consultá por alergias ·
+    Precios en pesos, IVA incluido
+  </p>
+</section>
+
+<!-- ══════════ NUESTRO CAFÉ ══════════ -->
+<section class="seccion" id="cafe">
+  <div class="seccion__cab reveal">
+    <span class="eyebrow">De dónde viene</span>
+    <h2 class="display">Siete orígenes,<br>un tueste por semana</h2>
+    <p class="seccion__sub">Compramos directo al productor y pagamos por encima del
+       precio de mercado. Cada bolsa dice de qué finca salió y cuándo se tostó.</p>
+  </div>
+
+  <div class="origenes" id="origenes"></div>
+</section>
+
+<!-- ══════════ GALERÍA ══════════ -->
+<section class="seccion seccion--crema" id="galeria">
+  <div class="seccion__cab reveal">
+    <span class="eyebrow">Galería</span>
+    <h2 class="display">El lugar</h2>
+    <p class="seccion__sub">Tocá cualquier foto para verla en grande.</p>
+  </div>
+  <div class="galeria" id="galeria"></div>
+</section>
+
+<!-- ══════════ VISITANOS ══════════ -->
+<section class="seccion" id="visitanos">
+  <div class="visita">
+    <div class="visita__datos reveal">
+      <span class="eyebrow">Visitanos</span>
+      <h2 class="display">Vera 1580,<br>Villa Crespo</h2>
+
+      <div class="horarios" id="horarios"></div>
+
+      <div class="contacto-datos">
+        <a href="tel:+541148990000" class="dato">
+          <span class="mono">Teléfono</span><b>11 4899-0000</b>
+        </a>
+        <a href="mailto:hola@bruma.cafe" class="dato">
+          <span class="mono">Mail</span><b>hola@bruma.cafe</b>
+        </a>
+        <a href="https://instagram.com" class="dato" target="_blank" rel="noopener">
+          <span class="mono">Instagram</span><b>@bruma.cafe</b>
+        </a>
+      </div>
+
+      <p class="chico">Trabajamos sin reservas de lunes a viernes hasta las 12.
+         Después de esa hora y los fines de semana, conviene reservar.</p>
+    </div>
+
+    <div class="visita__mapa reveal">
+      <iframe
+        title="Mapa con la ubicación de Bruma en Villa Crespo"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.4460%2C-34.5990%2C-58.4360%2C-34.5930&amp;layer=mapnik&amp;marker=-34.5960%2C-58.4410"
+        loading="lazy"></iframe>
+      <a class="mapa__link" href="https://www.openstreetmap.org/?mlat=-34.5960&mlon=-58.4410#map=17/-34.5960/-58.4410"
+         target="_blank" rel="noopener">Abrir en el mapa →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ RESERVAR ══════════ -->
+<section class="seccion seccion--oscura" id="reservar">
+  <div class="reserva">
+    <div class="reserva__texto reveal">
+      <span class="eyebrow eyebrow--claro">Reservas</span>
+      <h2 class="display">Guardamos<br>tu mesa</h2>
+      <p>Completá el formulario y te confirmamos por WhatsApp en el día. Para grupos
+         de más de ocho personas escribinos directo, lo coordinamos aparte.</p>
+      <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80"
+           alt="Mesa servida con café y medialunas" class="reserva__foto">
+    </div>
+
+    <form class="reserva__form reveal" id="form-reserva" novalidate>
+      <div class="campo">
+        <label for="r-nombre">Nombre y apellido</label>
+        <input id="r-nombre" name="nombre" type="text" required autocomplete="name" placeholder="Cómo te llamás">
+        <span class="error" data-para="r-nombre"></span>
+      </div>
+
+      <div class="campo-fila">
+        <div class="campo">
+          <label for="r-tel">Teléfono</label>
+          <input id="r-tel" name="tel" type="tel" required autocomplete="tel" placeholder="11 5555-5555">
+          <span class="error" data-para="r-tel"></span>
+        </div>
+        <div class="campo">
+          <label for="r-personas">Personas</label>
+          <select id="r-personas" name="personas">
+            <option>1</option><option selected>2</option><option>3</option>
+            <option>4</option><option>5</option><option>6</option>
+            <option>7</option><option>8</option><option>Más de 8</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="campo-fila">
+        <div class="campo">
+          <label for="r-fecha">Día</label>
+          <input id="r-fecha" name="fecha" type="date" required>
+          <span class="error" data-para="r-fecha"></span>
+        </div>
+        <div class="campo">
+          <label for="r-hora">Horario</label>
+          <select id="r-hora" name="hora" id="r-hora"></select>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="r-nota">Algo que debamos saber <span class="opcional">(opcional)</span></label>
+        <textarea id="r-nota" name="nota" rows="3" placeholder="Celiaquía, cumpleaños, cochecito, lo que sea"></textarea>
+      </div>
+
+      <button class="btn btn--full" type="submit">Pedir la reserva</button>
+      <p class="form-ok" id="form-ok" hidden>
+        ¡Listo! Te escribimos por WhatsApp para confirmar.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="pie">
+  <div class="pie__top">
+    <div class="pie__marca">
+      <span class="nav__logo">Bruma<span>.</span></span>
+      <p>Café de especialidad, panadería de masa madre y cocina de estación.
+         Vera 1580, Villa Crespo, Buenos Aires.</p>
+    </div>
+    <nav class="pie__nav">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#menu">Menú</a>
+      <a href="#cafe">Nuestro café</a>
+      <a href="#galeria">Galería</a>
+      <a href="#visitanos">Visitanos</a>
+      <a href="#reservar">Reservar</a>
+    </nav>
+  </div>
+  <div class="pie__abajo">
+    <span class="mono">© 2026 Bruma Café</span>
+    <span class="mono">Sitio de demostración · Diseño y desarrollo: Santiago Hermosilla</span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5491148990000" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+    <path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4z"/>
+    <path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/>
+  </svg>
+</a>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__cerrar" id="lb-cerrar" aria-label="Cerrar">✕</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="Anterior">‹</button>
+  <img id="lb-img" alt="">
+  <button class="lightbox__nav lightbox__nav--next" id="lb-next" aria-label="Siguiente">›</button>
+  <span class="lightbox__contador mono" id="lb-contador"></span>
+</div>
+
+<script src="datos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
