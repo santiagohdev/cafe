@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bruma — Café de especialidad">
 <meta property="og:description" content="Tostamos nuestro propio grano cada semana. Villa Crespo, Buenos Aires.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80">
+<meta property="og:image" content="https://cafe-theta-one.vercel.app/img/portada.webp">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,8 +42,8 @@
 <!-- ══════════ HERO ══════════ -->
 <section class="hero" id="inicio">
   <div class="hero__img">
-    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=80"
-         alt="Taza de café recién servida sobre una mesa de madera">
+    <img src="img/portada.webp"
+         alt="Taza de café recién servida sobre una mesa de madera" fetchpriority="high" decoding="async">
   </div>
 
   <div class="hero__inner">
@@ -87,7 +87,7 @@
       <p>No tenemos wifi. Tenemos mesas grandes, sobremesa larga y gente que se
          conoce entre sí.</p>
       <div class="firma">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=80" alt="">
+        <img src="img/retrato-equipo.webp" alt="" loading="lazy" decoding="async">
         <div>
           <b>Delfina y Tomás</b>
           <span>Fundadores</span>
@@ -96,10 +96,10 @@
     </div>
 
     <div class="dos-col__fotos reveal">
-      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80"
-           alt="Interior del salón con mesas de madera y luz natural" class="foto-alta">
-      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=80"
-           alt="Detalle de la barra con la máquina de espresso" class="foto-baja">
+      <img src="img/salon.webp"
+           alt="Interior del salón con mesas de madera y luz natural" class="foto-alta" loading="lazy" decoding="async">
+      <img src="img/barra-espresso.webp"
+           alt="Detalle de la barra con la máquina de espresso" class="foto-baja" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -194,8 +194,8 @@
       <h2 class="display">Guardamos<br>tu mesa</h2>
       <p>Completá el formulario y te confirmamos por WhatsApp en el día. Para grupos
          de más de ocho personas escribinos directo, lo coordinamos aparte.</p>
-      <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80"
-           alt="Mesa servida con café y medialunas" class="reserva__foto">
+      <img src="img/mesa-servida.webp"
+           alt="Mesa servida con café y medialunas" class="reserva__foto" loading="lazy" decoding="async">
     </div>
 
     <form class="reserva__form reveal" id="form-reserva" novalidate>
@@ -279,7 +279,7 @@
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox__cerrar" id="lb-cerrar" aria-label="Cerrar">✕</button>
   <button class="lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="Anterior">‹</button>
-  <img id="lb-img" alt="">
+  <img id="lb-img" alt="" loading="lazy" decoding="async">
   <button class="lightbox__nav lightbox__nav--next" id="lb-next" aria-label="Siguiente">›</button>
   <span class="lightbox__contador mono" id="lb-contador"></span>
 </div>

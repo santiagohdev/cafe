@@ -86,14 +86,14 @@ const ORIGENES = [
 ];
 
 const GALERIA = [
-  ["photo-1554118811-1e0d58224f24", "Salón principal con mesas de madera"],
-  ["photo-1509042239860-f550ce710b93", "Taza de café con arte en la leche"],
-  ["photo-1445116572660-236099ec97a0", "Mesa servida con café y medialunas"],
-  ["photo-1559925393-8be0ec4767c8", "Barra con la máquina de espresso"],
-  ["photo-1521017432531-fbd92d768814", "Interior del café con luz natural"],
-  ["photo-1461988320302-91bde64fc8e4", "Granos de café recién tostados"],
-  ["photo-1447933601403-0c6688de566e", "Café servido en taza blanca"],
-  ["photo-1600093463592-8e36ae95ef56", "Pastelería de la casa en exhibición"],
+  ["salon", "Salón principal con mesas de madera"],
+  ["latte-art", "Taza de café con arte en la leche"],
+  ["mesa-servida", "Mesa servida con café y medialunas"],
+  ["barra-espresso", "Barra con la máquina de espresso"],
+  ["interior-luz", "Interior del café con luz natural"],
+  ["granos", "Granos de café recién tostados"],
+  ["taza-blanca", "Café servido en taza blanca"],
+  ["pasteleria", "Pastelería de la casa en exhibición"],
 ];
 
 const HORARIOS = [

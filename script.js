@@ -69,11 +69,14 @@ $("#origenes").innerHTML = ORIGENES.map(o => `
   </article>`).join("");
 
 /* ---------- GALERÍA + LIGHTBOX ---------- */
-const url = (id, w) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+/* Las fotos viven en el repo. Antes venían del CDN de Unsplash: si esa
+   cuenta borraba una imagen, el sitio se quedaba con huecos, y la tarjeta
+   de compartir dependía de un tercero. */
+const url = (id) => `img/${id}.webp`;
 
 $("#galeria").innerHTML = GALERIA.map(([id, alt], i) => `
   <button data-i="${i}" aria-label="Ampliar: ${alt}">
-    <img src="${url(id, 700)}" alt="${alt}" loading="lazy">
+    <img src="${url(id)}" alt="${alt}" loading="lazy">
   </button>`).join("");
 
 const lb = $("#lightbox"), lbImg = $("#lb-img"), lbCont = $("#lb-contador");
@@ -82,7 +85,7 @@ let actual = 0;
 function abrirLB(i) {
   actual = (i + GALERIA.length) % GALERIA.length;
   const [id, alt] = GALERIA[actual];
-  lbImg.src = url(id, 1600);
+  lbImg.src = url(id);
   lbImg.alt = alt;
   lbCont.textContent = `${actual + 1} / ${GALERIA.length}`;
   lb.hidden = false;
@@ -109,6 +112,40 @@ addEventListener("keydown", e => {
   if (e.key === "ArrowRight") abrirLB(actual + 1);
 });
 
+/* ---------- DATOS ESTRUCTURADOS ----------
+   Para un café es el dato que Google más usa: habilita el panel con horarios,
+   dirección y estado abierto/cerrado en los resultados. Se arma desde el
+   mismo HORARIOS de datos.js, así nunca se desincroniza de lo que se muestra. */
+(() => {
+  const DIAS_SCHEMA = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+  const ficha = {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    name: "Bruma",
+    description: "Café de especialidad, panadería de masa madre y cocina de estación en Villa Crespo.",
+    image: "https://cafe-theta-one.vercel.app/img/portada.webp",
+    servesCuisine: "Café de especialidad",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Av. Corrientes 5200",
+      addressLocality: "Villa Crespo",
+      addressRegion: "CABA",
+      addressCountry: "AR",
+    },
+    openingHoursSpecification: HORARIOS.map(([dia, abre, cierra], i) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: `https://schema.org/${DIAS_SCHEMA[i]}`,
+      opens: abre,
+      closes: cierra,
+    })),
+  };
+  const et = document.createElement("script");
+  et.type = "application/ld+json";
+  et.textContent = JSON.stringify(ficha);
+  document.head.appendChild(et);
+})();
+
 /* ---------- HORARIOS ---------- */
 // getDay() devuelve 0=domingo. La tabla arranca en lunes, así que se corrige.
 const hoyIdx = (new Date().getDay() + 6) % 7;
@@ -124,12 +161,27 @@ const [, abreHoy, cierraHoy] = HORARIOS[hoyIdx];
 const ahora = new Date();
 const min = ahora.getHours() * 60 + ahora.getMinutes();
 const aMin = h => +h.slice(0, 2) * 60 + +h.slice(3);
-const abierto = min >= aMin(abreHoy) && min < aMin(cierraHoy);
+/* Si un día cerrara pasada la medianoche, aMin(cierra) sería menor que
+   aMin(abre) y la comparación directa daría siempre cerrado. Sumarle un día
+   al cierre lo cubre por si mañana cambian los horarios. */
+const abreMin = aMin(abreHoy);
+let cierraMin = aMin(cierraHoy);
+if (cierraMin <= abreMin) cierraMin += 24 * 60;
+const abierto = min >= abreMin && min < cierraMin;
+
 const cartel = $(".hero__abajo .mono");
 if (cartel) {
-  cartel.textContent = abierto
-    ? `Abierto ahora · cierra ${cierraHoy}`
-    : `Cerrado ahora · abre ${abreHoy}`;
+  if (abierto) {
+    cartel.textContent = `Abierto ahora · cierra ${cierraHoy}`;
+  } else {
+    // Antes decía "abre 08:00" también a las nueve de la noche, cuando esas
+    // ocho son las de mañana. Ahora se aclara de qué día se habla.
+    const yaCerro = min >= cierraMin;
+    const [, abreManana] = HORARIOS[(hoyIdx + 1) % 7];
+    cartel.textContent = yaCerro
+      ? `Cerrado ahora · abre mañana ${abreManana}`
+      : `Cerrado ahora · abre hoy ${abreHoy}`;
+  }
 }
 
 /* ---------- HORARIOS DEL FORMULARIO ---------- */
