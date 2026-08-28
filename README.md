@@ -1,8 +1,13 @@
 # Bruma — Café de especialidad
 
-Sitio de demostración para una cafetería. Estático, sin dependencias ni build.
+Bruma no existe: es una cafetería inventada que usé como pretexto para
+construir un sitio institucional completo desde cero, sin frameworks ni
+plantillas. No hubo cliente ni encargo — el objetivo era ejercitar un
+proyecto entero de punta a punta.
 
-**Demo:** https://bruma-cafe-santiago.vercel.app
+Estático, sin dependencias ni build.
+
+**Demo:** https://cafe-theta-one.vercel.app
 
 ## Qué incluye
 
